@@ -69,8 +69,6 @@ body {
     transition: background var(--transition-medium);
 }
 
-}
-
 h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-heading);
     font-weight: 400; /* Regular weight for academic feel */
@@ -184,8 +182,6 @@ ul {
 .nav-link:hover, .nav-link.active {
     color: var(--text-primary);
     text-shadow: 0 0 10px rgba(240, 246, 252, 0.2);
-}
-
 }
 
 .nav-link.active::after {
@@ -680,8 +676,6 @@ ul {
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3), 0 0 20px rgba(94, 139, 183, 0.05);
 }
 
-}
-
 .contact-card h3 {
     font-size: 1.75rem;
     margin-bottom: 1rem;
@@ -750,8 +744,6 @@ ul {
     box-shadow: 0 4px 12px rgba(94, 139, 183, 0.1);
 }
 
-}
-
 .discourse-btn:hover {
     border-color: #3fb950;
     color: var(--text-primary);
@@ -763,10 +755,6 @@ ul {
 .navbar.scrolled {
     background: rgba(10, 13, 19, 0.85);
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-}
-
-}
-
 }
 
 /* =========================================
