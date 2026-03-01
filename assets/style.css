@@ -2,26 +2,26 @@
    VARIABLES & THEME
    ========================================= */
    :root {
-    /* Colors */
-    --bg-main: #0a0d13; /* Darker navy */
-    --surface: #121822; /* Surface navy */
-    --surface-hover: #192130;
-    --text-primary: #ffffff; /* Brighter pure white */
-    --text-muted: #bdcce0;   /* Significantly brighter muted text */
+    /* Colors - Premium Academic Dark Mode */
+    --bg-main: #06090e; /* Deep rich navy-black */
+    --surface: #0d121b; /* Elevated surface */
+    --surface-hover: #151d2a;
+    --text-primary: #f8fafc; /* Crisp white */
+    --text-muted: #94a3b8;   /* Softer, legible gray-blue */
     --accent: #5e8bb7; /* Muted academic blue */
     --accent-hover: #7b9fc6;
-    --accent-teal: #58a6ff;   /* Coding / Data */
-    --accent-purple: #d2a8ff; /* AI / ML */
-    --accent-gold: #e3b341;   /* Achievements */
-    --border: #21262d;
-    --error: #f85149;
+    --accent-teal: #4fd1c5;   /* Brighter, modern teal */
+    --accent-purple: #b794f4; /* Softer, richer purple */
+    --accent-gold: #f6ad55;   /* Warm, clear gold */
+    --border: #1e293b;
+    --error: #ef4444;
     
     /* Typography */
     --font-heading: 'Georgia', serif;
     --font-body: 'Inter', sans-serif;
     
     /* Layout */
-    --nav-height: 80px;
+    --nav-height: 50px;
     --container-width: 1100px;
     --radius-sm: 8px;
     --radius-md: 12px;
@@ -127,7 +127,7 @@ ul {
     left: 50%;
     transform: translateX(-50%);
     width: calc(100% - 2rem);
-    max-width: 900px;
+    max-width: 1050px;
     height: var(--nav-height);
     background: rgba(18, 24, 34, 0.85); /* Slightly transparent surface */
     backdrop-filter: blur(8px);
@@ -143,7 +143,7 @@ ul {
     justify-content: space-between;
     align-items: center;
     height: 100%;
-    padding: 0 2rem;
+    padding: 0 1.5rem;
 }
 
 .nav-logo {
@@ -156,7 +156,7 @@ ul {
 
 .nav-links {
     display: flex;
-    gap: 2rem;
+    gap: 1.25rem;
 }
 
 .nav-link {
@@ -170,6 +170,8 @@ ul {
 }
 
 .nav-icon {
+    width: 16px;
+    height: 16px;
     opacity: 0.7;
     transition: all var(--transition-fast);
 }
@@ -227,10 +229,11 @@ ul {
 
 /* Typography Color Utilities */
 .text-gradient {
-    background: linear-gradient(120deg, var(--accent-teal), var(--accent-purple));
+    background: linear-gradient(135deg, var(--accent-teal), #818cf8, var(--accent-purple));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    color: var(--text-primary); /* Fallback */
 }
 
 .text-teal { color: var(--accent-teal); }
@@ -326,6 +329,27 @@ ul {
     font-size: 1.25rem;
     color: var(--text-primary);
     margin-bottom: 1.5rem;
+}
+
+.log-list {
+    min-height: 50px; /* Prevent layout shift when typing */
+    display: flex;
+    align-items: center;
+}
+
+.log-list li {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+}
+
+.log-cursor {
+    display: inline-block;
+    width: 2px;
+    background-color: var(--accent);
+    animation: blink 1s step-end infinite;
+    margin-left: 5px;
+    vertical-align: text-bottom;
 }
 
 .log-item {
