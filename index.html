@@ -1,17 +1,233 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Redirecting...</title>
-    <!-- Redirect to the /home directory immediately -->
-    <meta http-equiv="refresh" content="0; url=home/">
-    <!-- Fallback link in case redirect fails -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome | Rajnish Yadav</title>
+    <!-- Redirect after 2.6 seconds -->
+    <meta http-equiv="refresh" content="2.6; url=home/">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Using Playfair Display for an elegant, fancy serif feel, and Outfit for modern smooth sans-serif -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700;800&family=Playfair+Display:ital,wght@0,500;0,700;1,600&display=swap" rel="stylesheet">
+    
     <style>
-        body { font-family: sans-serif; display: flex; justify-content: center; align-items: center; height: 100vh; background-color: #0b1120; color: white; }
-        a { color: #5ea6ff; text-decoration: none; }
+        :root {
+            --bg-color: #06090e; /* Match theme deep rich navy-black */
+            --accent-teal: #4fd1c5;
+            --accent-purple: #b794f4;
+            --accent-pink: #f6ad55; /* Use theme gold as pink replacement */
+            --accent-gold: #f6ad55;
+        }
+        
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            background-color: var(--bg-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Outfit', sans-serif;
+            overflow: hidden;
+            /* Match the theme's subtle radial gradient style instead of the shifting background */
+            background-image: 
+                radial-gradient(circle at 15% 20%, rgba(94, 139, 183, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 85% 80%, rgba(94, 139, 183, 0.08) 0%, transparent 50%);
+            /* Fade to black right before redirect */
+            animation: fadeToBlack 0.8s ease forwards 2.4s;
+        }
+
+        .welcome-container {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            z-index: 10;
+            /* Fade out UI elements before redirect */
+            animation: fadeOut 0.5s ease forwards 2.2s;
+        }
+
+        .welcome-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 5rem;
+            font-weight: 700;
+            font-style: italic;
+            margin: 0;
+            letter-spacing: 2px;
+            /* Multi-color moving gradient */
+            background: linear-gradient(
+                90deg, 
+                var(--accent-teal), 
+                var(--accent-purple), 
+                var(--accent-gold),
+                var(--accent-teal)
+            );
+            background-size: 300% 100%;
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            -webkit-text-fill-color: transparent;
+            opacity: 0;
+            transform: scale(0.9) translateY(20px);
+            animation: 
+                revealText 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) forwards,
+                shimmer 4s linear infinite;
+            padding: 0.1em 0;
+            filter: drop-shadow(0 0 15px rgba(157, 78, 221, 0.2));
+        }
+        
+        .name-text {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 300;
+            letter-spacing: 8px;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.9);
+            margin-top: 1rem;
+            opacity: 0;
+            transform: translateY(15px);
+            animation: revealName 1s cubic-bezier(0.2, 0.8, 0.2, 1) 0.6s forwards;
+            text-shadow: 0 0 10px rgba(79, 209, 197, 0.15);
+        }
+
+        .loader-wrapper {
+            margin-top: 2.5rem;
+            width: 250px;
+            height: 3px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 4px;
+            overflow: hidden;
+            position: relative;
+            opacity: 0;
+            animation: fadeIn 0.5s ease 1s forwards;
+        }
+
+        .loader-line {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 0;
+            background: linear-gradient(90deg, var(--accent-teal), var(--accent-purple), var(--accent-gold));
+            border-radius: 4px;
+            box-shadow: 0 0 15px rgba(183, 148, 244, 0.5);
+            animation: fillProgress 2.4s cubic-bezier(0.7, 0, 0.3, 1) forwards;
+        }
+
+        /* Animations */
+        @keyframes fadeToBlack {
+            from { background-color: var(--bg-color); }
+            to { background-color: #000; }
+        }
+
+        @keyframes fadeOut {
+            from { opacity: 1; transform: scale(1); }
+            to { opacity: 0; transform: scale(0.95); }
+        }
+
+        @keyframes revealText {
+            0% { 
+                opacity: 0; 
+                transform: scale(0.9) translateY(20px); 
+                filter: blur(10px) drop-shadow(0 0 15px rgba(157, 78, 221, 0.2));
+            }
+            100% { 
+                opacity: 1; 
+                transform: scale(1) translateY(0); 
+                filter: blur(0px) drop-shadow(0 0 15px rgba(157, 78, 221, 0.2));
+            }
+        }
+        
+        @keyframes shimmer {
+            0% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        @keyframes revealName {
+            0% { opacity: 0; transform: translateY(15px); letter-spacing: 2px;}
+            100% { opacity: 1; transform: translateY(0); letter-spacing: 8px;}
+        }
+        
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
+
+        @keyframes fillProgress {
+            0% { width: 0%; left: 0; }
+            45% { width: 80%; left: 10%; }
+            100% { width: 100%; left: 0; }
+        }
+
+        /* Ambient Glowing Orbs */
+        .orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(60px);
+            z-index: 1;
+            opacity: 0.5;
+            animation: 
+                pulseOrb 8s alternate infinite ease-in-out,
+                fadeOut 0.8s ease forwards 2.2s; /* Fade out orbs before redirect */
+        }
+
+        .orb-1 { width: 300px; height: 300px; background: rgba(79, 209, 197, 0.1); top: -100px; left: -100px; animation-delay: 0s, 2.2s; }
+        .orb-2 { width: 400px; height: 400px; background: rgba(183, 148, 244, 0.1); bottom: -150px; right: 10%; animation-delay: 2s, 2.2s; }
+        .orb-3 { width: 200px; height: 200px; background: rgba(246, 173, 85, 0.1); top: 50%; left: 50%; transform: translate(-50%, -50%); animation-delay: 4s, 2.2s; }
+
+        @keyframes pulseOrb {
+            0% { transform: scale(0.8) translate(0, 0); opacity: 0.2; }
+            100% { transform: scale(1.2) translate(20px, -20px); opacity: 0.4; }
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .welcome-text { font-size: 3.5rem; }
+            .name-text { font-size: 1.2rem; letter-spacing: 4px; }
+            @keyframes revealName {
+                0% { opacity: 0; transform: translateY(15px); letter-spacing: 2px;}
+                100% { opacity: 1; transform: translateY(0); letter-spacing: 4px;}
+            }
+        }
+        
+        .fallback-link {
+            position: absolute;
+            bottom: 2rem;
+            color: rgba(255,255,255,0.4);
+            text-decoration: none;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            opacity: 0;
+            z-index: 20;
+            animation: fadeIn 1s ease 2.8s forwards; /* Appears after redirect fails */
+            transition: color 0.4s ease;
+        }
+        
+        .fallback-link:hover {
+            color: var(--accent-teal);
+            text-shadow: 0 0 8px var(--accent-teal);
+        }
     </style>
 </head>
 <body>
-    <p>If you are not redirected automatically, follow this <a href="home/">link to the home page</a>.</p>
+    <!-- Environmental lighting -->
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+
+    <div class="welcome-container">
+        <h1 class="welcome-text">Welcome</h1>
+        <div class="name-text">Rajnish Yadav</div>
+        <div class="loader-wrapper">
+            <div class="loader-line"></div>
+        </div>
+    </div>
+    
+    <a href="home/" class="fallback-link">Enter Site</a>
 </body>
 </html>
