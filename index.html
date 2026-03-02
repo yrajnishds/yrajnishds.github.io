@@ -6,13 +6,13 @@
     <title>Welcome | Rajnish Yadav</title>
     <!-- Redirect after 2.6 seconds -->
     <meta http-equiv="refresh" content="2.6; url=home/">
-    
+
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <!-- Using Playfair Display for an elegant, fancy serif feel, and Outfit for modern smooth sans-serif -->
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700;800&family=Playfair+Display:ital,wght@0,500;0,700;1,600&display=swap" rel="stylesheet">
-    
+
     <style>
         :root {
             --bg-color: #06090e; /* Match theme deep rich navy-black */
@@ -21,7 +21,7 @@
             --accent-pink: #f6ad55; /* Use theme gold as pink replacement */
             --accent-gold: #f6ad55;
         }
-        
+
         body, html {
             margin: 0;
             padding: 0;
@@ -33,7 +33,7 @@
             font-family: 'Outfit', sans-serif;
             overflow: hidden;
             /* Match the theme's subtle radial gradient style instead of the shifting background */
-            background-image: 
+            background-image:
                 radial-gradient(circle at 15% 20%, rgba(94, 139, 183, 0.08) 0%, transparent 50%),
                 radial-gradient(circle at 85% 80%, rgba(94, 139, 183, 0.08) 0%, transparent 50%);
             /* Fade to black right before redirect */
@@ -61,9 +61,9 @@
             letter-spacing: 2px;
             /* Multi-color moving gradient */
             background: linear-gradient(
-                90deg, 
-                var(--accent-teal), 
-                var(--accent-purple), 
+                90deg,
+                var(--accent-teal),
+                var(--accent-purple),
                 var(--accent-gold),
                 var(--accent-teal)
             );
@@ -74,13 +74,13 @@
             -webkit-text-fill-color: transparent;
             opacity: 0;
             transform: scale(0.9) translateY(20px);
-            animation: 
+            animation:
                 revealText 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) forwards,
                 shimmer 4s linear infinite;
             padding: 0.1em 0;
             filter: drop-shadow(0 0 15px rgba(157, 78, 221, 0.2));
         }
-        
+
         .name-text {
             font-family: 'Outfit', sans-serif;
             font-size: 1.8rem;
@@ -131,18 +131,18 @@
         }
 
         @keyframes revealText {
-            0% { 
-                opacity: 0; 
-                transform: scale(0.9) translateY(20px); 
+            0% {
+                opacity: 0;
+                transform: scale(0.9) translateY(20px);
                 filter: blur(10px) drop-shadow(0 0 15px rgba(157, 78, 221, 0.2));
             }
-            100% { 
-                opacity: 1; 
-                transform: scale(1) translateY(0); 
+            100% {
+                opacity: 1;
+                transform: scale(1) translateY(0);
                 filter: blur(0px) drop-shadow(0 0 15px rgba(157, 78, 221, 0.2));
             }
         }
-        
+
         @keyframes shimmer {
             0% { background-position: 100% 50%; }
             100% { background-position: 0% 50%; }
@@ -152,7 +152,7 @@
             0% { opacity: 0; transform: translateY(15px); letter-spacing: 2px;}
             100% { opacity: 1; transform: translateY(0); letter-spacing: 8px;}
         }
-        
+
         @keyframes fadeIn {
             to { opacity: 1; }
         }
@@ -170,7 +170,7 @@
             filter: blur(60px);
             z-index: 1;
             opacity: 0.5;
-            animation: 
+            animation:
                 pulseOrb 8s alternate infinite ease-in-out,
                 fadeOut 0.8s ease forwards 2.2s; /* Fade out orbs before redirect */
         }
@@ -193,7 +193,7 @@
                 100% { opacity: 1; transform: translateY(0); letter-spacing: 4px;}
             }
         }
-        
+
         .fallback-link {
             position: absolute;
             bottom: 2rem;
@@ -207,7 +207,7 @@
             animation: fadeIn 1s ease 2.8s forwards; /* Appears after redirect fails */
             transition: color 0.4s ease;
         }
-        
+
         .fallback-link:hover {
             color: var(--accent-teal);
             text-shadow: 0 0 8px var(--accent-teal);
@@ -227,7 +227,7 @@
             <div class="loader-line"></div>
         </div>
     </div>
-    
+
     <a href="home/" class="fallback-link">Enter Site</a>
 </body>
 </html>

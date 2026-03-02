@@ -1,30 +1,21 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // 0a. Inject Master Navbar directly to avoid local CORS issues
+    // 0a. Fetch and Inject Master Navbar
     const navPlaceholder = document.getElementById('nav-placeholder');
     if (navPlaceholder) {
-        navPlaceholder.innerHTML = `
-<nav class="navbar">
-    <div class="nav-container">
-        <a href="../home/" class="nav-logo">Rajnish</a>
-        <ul class="nav-links">
-            <li><a href="../home/" class="nav-link" data-path="/home/"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="nav-icon"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg> Home</a></li>
-            <li><a href="../research/" class="nav-link" data-path="/research/"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="nav-icon"><circle cx="9" cy="9" r="2"></circle><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"></path><path d="M9 3v.01"></path><path d="M5 5v.01"></path><path d="M3 9v.01"></path></svg> Research</a></li>
-            <li><a href="../projects/" class="nav-link" data-path="/projects/"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="nav-icon"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg> Projects</a></li>
-            <li><a href="../blog/" class="nav-link" data-path="/blog/"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="nav-icon"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg> Blog</a></li>
-            <li><a href="../youtube/" class="nav-link" data-path="/youtube/"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="nav-icon"><polygon points="23 7 16 12 23 17 23 7"></polygon><rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect></svg> YouTube</a></li>
-            <li><a href="../skills/" class="nav-link" data-path="/skills/"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="nav-icon"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg> Skills</a></li>
-            <li><a href="../cv/" class="nav-link" data-path="/cv/"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="nav-icon"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg> CV</a></li>
-            <li><a href="../connect/" class="nav-link" data-path="/connect/"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="nav-icon"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg> Connect</a></li>
-        </ul>
-        <div class="hamburger">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
-        </div>
-    </div>
-</nav>
-        `;
-        
+        fetch('../components/nav.html')
+            .then(response => {
+                if (!response.ok) throw new Error('Network response was not ok');
+                return response.text();
+            })
+            .then(html => {
+                navPlaceholder.innerHTML = html;
+                initializeNavigation();
+            })
+            .catch(error => console.error('Error loading navigation:', error));
+    }
+
+    // Initialize Navigation specific scripts
+    function initializeNavigation() {
         // Highlight active link based on current path
         const currentPath = window.location.pathname;
         const navLinks = document.querySelectorAll('.nav-link');
@@ -50,6 +41,30 @@ document.addEventListener('DOMContentLoaded', () => {
                     navLinksUl.classList.remove('active');
                 });
             });
+        }
+    }
+
+    // 0b. Fetch and Inject Master Footer
+    const footerPlaceholder = document.getElementById('footer-placeholder');
+    if (footerPlaceholder) {
+        fetch('../components/footer.html')
+            .then(response => {
+                if (!response.ok) throw new Error('Network response was not ok');
+                return response.text();
+            })
+            .then(html => {
+                footerPlaceholder.innerHTML = html;
+                initializeFooter();
+            })
+            .catch(error => console.error('Error loading footer:', error));
+    }
+
+    // Initialize Footer specific scripts
+    function initializeFooter() {
+        // 1. Set current year in footer
+        const yearElement = document.getElementById('year');
+        if (yearElement) {
+            yearElement.textContent = new Date().getFullYear();
         }
     }
 
@@ -137,11 +152,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
         loop(); // Start animation
     }
-
-    // 1. Set current year in footer
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    // Hamburger menu logic moved to the fetch component loader above
 
     // 3. Typing Effect (Academic Phrases)
     const typingText = document.getElementById('typing-text');
