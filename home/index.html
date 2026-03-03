@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rajnish Yadav | Portfolio</title>
+    <link rel="icon" href="../assets/images/favicon.png">
+    
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="../assets/global/variables.css">
+    <link rel="stylesheet" href="../assets/global/base.css">
+    
+    <!-- Component CSS -->
+    <link rel="stylesheet" href="../components/navbar/navbar.css">
+    <link rel="stylesheet" href="../components/footer/footer.css">
+    <link rel="stylesheet" href="home.css">
+</head>
+<body>
+    <!-- Background Effects -->
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+
+    <!-- Navigation Bar Container -->
+    <div id="navbar"></div>
+
+    <main>
+        <!-- Home/Hero Section -->
+        <section id="home" class="section glass-panel">
+            <div class="container hero-content text-center">
+                <div class="reveal">
+                    <img src="../assets/images/profile.jpg" alt="Rajnish Yadav" class="hero-profile-img">
+                </div>
+                
+                <h1 class="hero-title reveal" style="transition-delay: 0.1s">
+                    <span class="text-gradient">Rajnish Yadav</span>
+                </h1>
+                
+                <h2 class="hero-subtitle reveal" style="transition-delay: 0.2s; font-size: 1.6rem; margin-bottom: 0.5rem; font-weight: 600; color: var(--text-primary);">
+                    Indian Institute of Technology (IIT) Madras
+                </h2>
+                
+                <h3 class="reveal" style="transition-delay: 0.2s; font-size: 1.35rem; font-weight: 500; color: var(--accent-teal); margin-bottom: 1.25rem; letter-spacing: 0.5px;">
+                    B.S. in Data Science and Applications
+                </h3>
+                
+                <div class="reveal" style="transition-delay: 0.3s; margin-bottom: 2rem;">
+                    <a href="mailto:25f2004238@ds.study.iitm.ac.in" style="display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(183, 148, 244, 0.1); border: 1px solid rgba(183, 148, 244, 0.3); color: var(--accent-purple); padding: 0.5rem 1.25rem; border-radius: 50px; font-size: 1rem; text-decoration: none; transition: all 0.3s ease;">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                        25f2004238@ds.study.iitm.ac.in
+                    </a>
+                </div>
+
+                <div class="reveal glass-panel" style="transition-delay: 0.3s; max-width: 800px; margin: 0 auto 2.5rem auto; padding: 1.5rem; border-radius: var(--radius-lg); border-left: 4px solid var(--accent-teal);">
+                    <p class="hero-subtitle text-secondary" style="margin: 0; font-size: 1.15rem; line-height: 1.8; text-align: left;">
+                        Aspiring to pursue MS/PhD through <strong class="text-gold">GATE DA</strong> and contribute to research-oriented work in 
+                        <strong class="text-teal">Data Science</strong> and <strong class="text-purple">Artificial Intelligence</strong>.
+                    </p>
+                </div>
+                
+                <div class="reveal" style="transition-delay: 0.4s; display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; margin-bottom: 2rem;">
+                    <span style="background: rgba(79, 209, 197, 0.1); border: 1px solid var(--accent-teal); color: var(--accent-teal); padding: 0.4rem 1rem; border-radius: 20px; font-size: 0.85rem;">Machine Learning</span>
+                    <span style="background: rgba(183, 148, 244, 0.1); border: 1px solid var(--accent-purple); color: var(--accent-purple); padding: 0.4rem 1rem; border-radius: 20px; font-size: 0.85rem;">Mathematical Foundations</span>
+                    <span style="background: rgba(246, 173, 85, 0.1); border: 1px solid var(--accent-gold); color: var(--accent-gold); padding: 0.4rem 1rem; border-radius: 20px; font-size: 0.85rem;">Algorithmic Thinking</span>
+                </div>
+                
+                <div class="hero-cta reveal" style="transition-delay: 0.5s; display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+                    <a href="#about" class="btn btn-primary" style="min-width: 200px;">Read More</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="section">
+            <div class="container reveal">
+                <h2 class="section-title text-center">About Me</h2>
+                <div class="glass-panel" style="padding: 3rem; margin-bottom: 3rem;">
+                    <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 1.5rem;">
+                        I am a student at the Indian Institute of Technology (IIT) Madras with a strong focus on building a robust mathematical foundation for AI research.
+                    </p>
+                    <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 1.5rem;">
+                        I view computer science not just as programming, but as applied computational thinking anchored in linear algebra and probability.
+                    </p>
+                    <p style="font-size: 1.1rem; line-height: 1.8;">
+                        My career objective is to pursue an MS/PhD through GATE DA. My current progression reflects an honest, self-directed acquisition of core technical and mathematical skills alongside my rigorous BS program.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="competencies" class="section">
+            <div class="container reveal">
+                <h2 class="section-title text-center">Core Competencies</h2>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+                    <div class="glass-panel" style="padding: 2rem;">
+                        <h3 class="text-teal" style="font-size: 1.5rem; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.5rem;">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+                            Programming & Computer Science
+                        </h3>
+                        <div style="margin-bottom: 1.5rem;">
+                            <h4 style="font-size: 1.2rem; margin-bottom: 0.5rem;">Python</h4>
+                            <p class="text-muted" style="font-size: 0.95rem;">Intermediate • Core Scripting • Data Structures</p>
+                        </div>
+                        <div>
+                            <h4 style="font-size: 1.2rem; margin-bottom: 0.5rem;">System Tools</h4>
+                            <p class="text-muted" style="font-size: 0.95rem;">Git & GitHub • VS Code Environment</p>
+                        </div>
+                    </div>
+                    
+                    <div class="glass-panel" style="padding: 2rem;">
+                        <h3 class="text-purple" style="font-size: 1.5rem; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.5rem;">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20"></path><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+                            Mathematics for AI
+                        </h3>
+                        <div style="margin-bottom: 1.5rem;">
+                            <h4 style="font-size: 1.2rem; margin-bottom: 0.5rem;">Probability & Statistics</h4>
+                            <p class="text-muted" style="font-size: 0.95rem;">Intermediate • Statistical Modeling</p>
+                        </div>
+                        <div>
+                            <h4 style="font-size: 1.2rem; margin-bottom: 0.5rem;">Linear Algebra</h4>
+                            <p class="text-muted" style="font-size: 0.95rem;">Intermediate • Mathematical Foundations</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Brief Academic Journey Summary -->
+        <section id="timeline" class="section">
+            <div class="container reveal">
+                <h2 class="section-title text-center">Academic Journey</h2>
+                <div class="timeline-container">
+                    <div class="timeline-item reveal" style="transition-delay: 0.1s;">
+                        <div class="timeline-dot" style="border-color: var(--accent-teal); box-shadow: 0 0 15px rgba(79, 209, 197, 0.4);"></div>
+                        <span class="timeline-date" style="color: var(--accent-teal); font-weight: 600; letter-spacing: 1px; font-size: 0.9rem; text-transform: uppercase;">Jan 2026 - Present</span>
+                        <div class="glass-panel" style="padding: 1.5rem; margin-top: 1rem; border-radius: var(--radius-md);">
+                            <h3 class="timeline-title" style="font-size: 1.4rem; color: var(--text-primary); margin-bottom: 0.25rem;">Independent Learner</h3>
+                            <h4 class="timeline-subtitle" style="font-size: 1.1rem; color: var(--accent-teal); margin-bottom: 1rem; font-weight: 500;">Data Science, Machine Learning, and Mathematics</h4>
+                            <p class="text-secondary" style="font-size: 1.05rem; line-height: 1.7; margin: 0;">Focused on building strong foundations in structural thinking, algorithmic problem solving, linear algebra, probability, and statistical modeling. Preparing for the <strong class="text-gold">GATE DA</strong> examination to pursue a master's or PhD degree from a premier institute.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item reveal" style="transition-delay: 0.2s;">
+                        <div class="timeline-dot" style="border-color: var(--accent-purple); box-shadow: 0 0 15px rgba(183, 148, 244, 0.4);"></div>
+                        <span class="timeline-date" style="color: var(--accent-purple); font-weight: 600; letter-spacing: 1px; font-size: 0.9rem; text-transform: uppercase;">May 2025 - Present</span>
+                        <div class="glass-panel" style="padding: 1.5rem; margin-top: 1rem; border-radius: var(--radius-md);">
+                            <h3 class="timeline-title" style="font-size: 1.4rem; color: var(--text-primary); margin-bottom: 0.25rem;">Student, B.S. in Data Science and Applications</h3>
+                            <h4 class="timeline-subtitle" style="font-size: 1.1rem; color: var(--accent-purple); margin-bottom: 1rem; font-weight: 500;">Indian Institute of Technology (IIT) Madras</h4>
+                            <p class="text-secondary" style="font-size: 1.05rem; line-height: 1.7; margin: 0;">Currently enrolled in the Diploma Level emphasizing mathematical and programming concepts for advanced applications in technology.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item reveal" style="transition-delay: 0.3s;">
+                        <div class="timeline-dot" style="border-color: var(--accent-gold); box-shadow: 0 0 15px rgba(246, 173, 85, 0.4);"></div>
+                        <span class="timeline-date" style="color: var(--accent-gold); font-weight: 600; letter-spacing: 1px; font-size: 0.9rem; text-transform: uppercase;">May 2025 - Dec 2025</span>
+                        <div class="glass-panel" style="padding: 1.5rem; margin-top: 1rem; border-radius: var(--radius-md);">
+                            <h3 class="timeline-title" style="font-size: 1.4rem; color: var(--text-primary); margin-bottom: 0.25rem;">Foundation Level Completed</h3>
+                            <h4 class="timeline-subtitle" style="font-size: 1.1rem; color: var(--accent-gold); margin-bottom: 1rem; font-weight: 500;">Indian Institute of Technology (IIT) Madras</h4>
+                            <p class="text-secondary" style="font-size: 1.05rem; line-height: 1.7; margin: 0;">Successfully completed courses focusing on fundamental programming, data concepts, mathematics, and statistics.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center" style="margin-top: 4rem;">
+                    <a href="../cv/Rajnish_Yadav_CV.pdf" target="_blank" class="btn btn-outline">View Resume (PDF)</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section">
+            <div class="container reveal text-center">
+                <h2 class="section-title">Get In Touch</h2>
+                <p style="font-size: 1.1rem; margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+                    I am open to academic discussions, research opportunities, and intellectual collaboration.
+                </p>
+                <div style="display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap;">
+                    <a href="mailto:yrajnishds@gmail.com" class="btn btn-primary" style="display: flex; align-items: center; gap: 0.5rem;">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                        Email: yrajnishds@gmail.com
+                    </a>
+                    <a href="https://discourse.onlinedegree.iitm.ac.in/u/yrajnish0715/" target="_blank" class="btn btn-outline" style="display: flex; align-items: center; gap: 0.5rem;">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+                        IITM Discourse Profile
+                    </a>
+                    <a href="https://github.com/yrajnishds" target="_blank" class="btn btn-outline" style="display: flex; align-items: center; gap: 0.5rem;">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                        GitHub Profile
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Container -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Scripts -->
+    <script>window.PORTFOLIO_ROOT = '../';</script>
+    <script src="../assets/global/utils.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            window.loadComponent('navbar', '../components/navbar/navbar.html');
+            window.loadComponent('footer-placeholder', '../components/footer/footer.html');
+        });
+    </script>
+</body>
+</html>

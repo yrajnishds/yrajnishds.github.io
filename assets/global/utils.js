@@ -8,18 +8,14 @@ window.loadComponent = async function(elementId, componentPath) {
             if(el) {
                 el.innerHTML = html;
                 
-                // If it's the navbar, initialize active states
-                if(elementId === 'navbar') {
-                    initNavbar();
+                // Set year if available
+                const yearSpan = document.getElementById('year');
+                if(yearSpan) {
+                    yearSpan.textContent = new Date().getFullYear();
                 }
-                
-                // If it's footer, set year
-                if(elementId === 'footer-placeholder') {
-                    const yearSpan = document.getElementById('year');
-                    if(yearSpan) {
-                        yearSpan.textContent = new Date().getFullYear();
-                    }
-                }
+
+                // Bind generic navigation any time components mount 
+                initNavigation();
             }
         }
     } catch (error) {
@@ -27,15 +23,17 @@ window.loadComponent = async function(elementId, componentPath) {
     }
 };
 
-function initNavbar() {
+function initNavigation() {
     const root = window.PORTFOLIO_ROOT || './';
     const linkMap = {
-        'home': root + 'index.html',
-        'projects': root + 'pages/projects/index.html',
-        'research': root + 'pages/research/index.html',
-        'blog': root + 'pages/blog/index.html',
-        'youtube': root + 'pages/youtube/index.html',
-        'connect': root + 'pages/connect/index.html'
+        'home': root + 'home/',
+        'projects': root + 'projects/',
+        'research': root + 'research/',
+        'blog': root + 'blog/',
+        'youtube': root + 'youtube/',
+        'connect': root + 'connect/',
+        'skills': root + 'skills/',
+        'cv': root + 'cv/'
     };
 
     const logo = document.querySelector('.nav-logo');
@@ -44,6 +42,7 @@ function initNavbar() {
     const profileImg = document.querySelector('.nav-profile-img');
     if(profileImg) profileImg.setAttribute('src', root + 'assets/images/profile.jpg');
 
+    // Update main nav links dynamically
     const navLinks = document.querySelectorAll('.nav-link');
     const currentPath = window.location.pathname;
 
@@ -54,12 +53,17 @@ function initNavbar() {
         }
         
         // Active state check based on URL
-        if(target === 'home') {
-            if(currentPath.endsWith('/') || currentPath.endsWith('index.html') && !currentPath.includes('pages/')) {
-                link.classList.add('active');
-            }
-        } else if (currentPath.includes(`pages/${target}`)) {
+        if (currentPath.includes(`/${target}/`) || currentPath.endsWith(`/${target}`)) {
             link.classList.add('active');
+        }
+    });
+
+    // Update footer links dynamically 
+    const footerLinks = document.querySelectorAll('.footer-link[data-link]');
+    footerLinks.forEach(link => {
+        const target = link.getAttribute('data-link');
+        if(target && linkMap[target]) {
+            link.setAttribute('href', linkMap[target]);
         }
     });
 
