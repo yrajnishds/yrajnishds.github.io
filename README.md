@@ -1,56 +1,26 @@
-# Rajnish Yadav – Academic & Research Portfolio
+# Rajnish Yadav - Academic Portfolio
 
-BS in Data Science and Applications (IIT Madras)  
-Aspiring Researcher in Data Science & Artificial Intelligence
+Welcome to the repository for my academic portfolio and personal website: [yrajnishds.github.io](https://yrajnishds.github.io).
 
+## About Me
 
-## Purpose
+I am a student at the Indian Institute of Technology (IIT) Madras pursuing a B.S. in Data Science and Applications. My focus is on building a robust mathematical foundation for AI research, anchoring my computational thinking in linear algebra spread across statistical modeling and algorithmic execution.
 
-This repository contains the source code for my personal academic portfolio hosted using GitHub Pages.
+My ultimate career objective is to pursue an MS/PhD through GATE DA, contributing to research-oriented work in Data Science and Artificial Intelligence.
 
-The website represents a structured documentation of my academic progress, technical development, and research-oriented interests in Data Science and Artificial Intelligence.
+## Website Features
 
+This portfolio is built with pure HTML, CSS, and Vanilla JavaScript with a strong emphasis on clean, modular, and dynamic UI design concepts. It features:
+- **Glassmorphism UI**: A consistent frosted-glass visual aesthetic across all components.
+- **Dynamic Routing**: Vanilla JS component injection for seamless header and footer loading.
+- **Detailed Resumes**: A tailored PDF curriculum vitae along with a web-based responsive CV.
+- **High Performance**: Highly optimized global variables and structured styling without relying on heavy frameworks.
 
-## Research Interests
+## Connect With Me
+- **Email**: [yrajnishds@gmail.com](mailto:yrajnishds@gmail.com)
+- **LinkedIn**: [yrajnishds](https://linkedin.com/in/yrajnishds)
+- **GitHub**: [yrajnishds](https://github.com/yrajnishds)
+- **IITM Discourse**: [yrajnish0715](https://discourse.onlinedegree.iitm.ac.in/u/yrajnish0715/)
 
-- Data Science
-- Machine Learning
-- Mathematical Foundations of Artificial Intelligence
-- Algorithmic Thinking
-- Statistical Modeling
-
-
-## Academic Background
-
-BS in Data Science and Applications  
-Indian Institute of Technology Madras
-
-
-## Technical Stack (Website Implementation)
-
-- HTML5
-- CSS3
-- JavaScript
-- Git (Version Control)
-- GitHub Pages (Hosting)
-
-
-## Planned Development
-
-This portfolio will evolve to include:
-
-- Detailed technical project case studies
-- Research documentation
-- Experimental implementations
-- Technical blog integration
-- Machine Learning project demonstrations
-
-
-## Live Website
-
-[Portfolio Website](https://yrajnishds.github.io)
-
-
----
-
-© Rajnish Yadav
+## License
+This project is licensed under the [MIT License](LICENSE).

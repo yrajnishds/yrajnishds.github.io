@@ -3,231 +3,292 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome | Rajnish Yadav</title>
-    <!-- Redirect after 2.6 seconds -->
-    <meta http-equiv="refresh" content="2.6; url=home/">
-
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <!-- Using Playfair Display for an elegant, fancy serif feel, and Outfit for modern smooth sans-serif -->
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700;800&family=Playfair+Display:ital,wght@0,500;0,700;1,600&display=swap" rel="stylesheet">
-
+    <meta name="description" content="Academic Portfolio of Rajnish Yadav - Research-driven AI Student at IIT Madras">
+    <title>Home | Rajnish Yadav</title>
+    <link rel="icon" href="assets/images/favicon.png">
+    
+    <!-- Base Global Styles -->
+    <link rel="stylesheet" href="assets/global/variables.css">
+    <link rel="stylesheet" href="assets/global/base.css">
+    
+    <!-- Component Styles -->
+    <link rel="stylesheet" href="components/navbar/navbar.css">
+    <link rel="stylesheet" href="components/footer/footer.css">
+    
+    <!-- Page Specific Styles (can be moved later if it grows too big) -->
     <style>
-        :root {
-            --bg-color: #06090e; /* Match theme deep rich navy-black */
-            --accent-teal: #4fd1c5;
-            --accent-purple: #b794f4;
-            --accent-pink: #f6ad55; /* Use theme gold as pink replacement */
-            --accent-gold: #f6ad55;
-        }
-
-        body, html {
-            margin: 0;
-            padding: 0;
-            height: 100%;
-            background-color: var(--bg-color);
+        .hero {
+            min-height: 80vh;
             display: flex;
-            justify-content: center;
             align-items: center;
-            font-family: 'Outfit', sans-serif;
-            overflow: hidden;
-            /* Match the theme's subtle radial gradient style instead of the shifting background */
-            background-image:
-                radial-gradient(circle at 15% 20%, rgba(94, 139, 183, 0.08) 0%, transparent 50%),
-                radial-gradient(circle at 85% 80%, rgba(94, 139, 183, 0.08) 0%, transparent 50%);
-            /* Fade to black right before redirect */
-            animation: fadeToBlack 0.8s ease forwards 2.4s;
+            position: relative;
         }
-
-        .welcome-container {
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
             text-align: center;
+        }
+
+        .hero-title {
+            font-size: 4rem;
+            margin-bottom: 0.5rem;
+            line-height: 1.1;
+            letter-spacing: -1px;
+        }
+
+        .affiliation-card {
+            background: linear-gradient(145deg, rgba(15, 23, 42, 0.6), rgba(6, 9, 14, 0.8));
+            border: 1px solid var(--surface-border);
+            border-radius: var(--radius-lg);
+            padding: 2rem;
+            margin: 2rem auto;
+            max-width: 600px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        .affiliation-card p {
+            margin-bottom: 0.5rem;
+        }
+
+        .tags-container {
             display: flex;
-            flex-direction: column;
-            align-items: center;
+            flex-wrap: wrap;
             justify-content: center;
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .tag {
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            background: rgba(255,255,255,0.03);
+            border: 1px solid var(--surface-border);
+            letter-spacing: 0.5px;
+        }
+
+        .tag.teal { color: var(--accent-teal); border-color: rgba(79, 209, 197, 0.3); }
+        .tag.purple { color: var(--accent-purple); border-color: rgba(183, 148, 244, 0.3); }
+        .tag.gold { color: var(--accent-gold); border-color: rgba(246, 173, 85, 0.3); }
+
+        .timeline-container {
             position: relative;
-            z-index: 10;
-            /* Fade out UI elements before redirect */
-            animation: fadeOut 0.5s ease forwards 2.2s;
+            max-width: 800px;
+            margin: 0 auto;
+            padding-left: 2rem;
         }
 
-        .welcome-text {
-            font-family: 'Playfair Display', serif;
-            font-size: 5rem;
-            font-weight: 700;
-            font-style: italic;
-            margin: 0;
-            letter-spacing: 2px;
-            /* Multi-color moving gradient */
-            background: linear-gradient(
-                90deg,
-                var(--accent-teal),
-                var(--accent-purple),
-                var(--accent-gold),
-                var(--accent-teal)
-            );
-            background-size: 300% 100%;
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            -webkit-text-fill-color: transparent;
-            opacity: 0;
-            transform: scale(0.9) translateY(20px);
-            animation:
-                revealText 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) forwards,
-                shimmer 4s linear infinite;
-            padding: 0.1em 0;
-            filter: drop-shadow(0 0 15px rgba(157, 78, 221, 0.2));
+        .timeline-container::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            width: 2px; height: 100%;
+            background: linear-gradient(to bottom, var(--accent-teal), var(--accent-purple), transparent);
         }
 
-        .name-text {
-            font-family: 'Outfit', sans-serif;
-            font-size: 1.8rem;
-            font-weight: 300;
-            letter-spacing: 8px;
-            text-transform: uppercase;
-            color: rgba(255, 255, 255, 0.9);
-            margin-top: 1rem;
-            opacity: 0;
-            transform: translateY(15px);
-            animation: revealName 1s cubic-bezier(0.2, 0.8, 0.2, 1) 0.6s forwards;
-            text-shadow: 0 0 10px rgba(79, 209, 197, 0.15);
-        }
-
-        .loader-wrapper {
-            margin-top: 2.5rem;
-            width: 250px;
-            height: 3px;
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 4px;
-            overflow: hidden;
+        .timeline-item {
             position: relative;
-            opacity: 0;
-            animation: fadeIn 0.5s ease 1s forwards;
+            margin-bottom: 3rem;
+            padding-left: 2rem;
         }
 
-        .loader-line {
+        .timeline-dot {
             position: absolute;
-            top: 0;
-            left: 0;
-            height: 100%;
-            width: 0;
-            background: linear-gradient(90deg, var(--accent-teal), var(--accent-purple), var(--accent-gold));
-            border-radius: 4px;
-            box-shadow: 0 0 15px rgba(183, 148, 244, 0.5);
-            animation: fillProgress 2.4s cubic-bezier(0.7, 0, 0.3, 1) forwards;
-        }
-
-        /* Animations */
-        @keyframes fadeToBlack {
-            from { background-color: var(--bg-color); }
-            to { background-color: #000; }
-        }
-
-        @keyframes fadeOut {
-            from { opacity: 1; transform: scale(1); }
-            to { opacity: 0; transform: scale(0.95); }
-        }
-
-        @keyframes revealText {
-            0% {
-                opacity: 0;
-                transform: scale(0.9) translateY(20px);
-                filter: blur(10px) drop-shadow(0 0 15px rgba(157, 78, 221, 0.2));
-            }
-            100% {
-                opacity: 1;
-                transform: scale(1) translateY(0);
-                filter: blur(0px) drop-shadow(0 0 15px rgba(157, 78, 221, 0.2));
-            }
-        }
-
-        @keyframes shimmer {
-            0% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-
-        @keyframes revealName {
-            0% { opacity: 0; transform: translateY(15px); letter-spacing: 2px;}
-            100% { opacity: 1; transform: translateY(0); letter-spacing: 8px;}
-        }
-
-        @keyframes fadeIn {
-            to { opacity: 1; }
-        }
-
-        @keyframes fillProgress {
-            0% { width: 0%; left: 0; }
-            45% { width: 80%; left: 10%; }
-            100% { width: 100%; left: 0; }
-        }
-
-        /* Ambient Glowing Orbs */
-        .orb {
-            position: absolute;
+            top: 0; left: -2.35rem;
+            width: 15px; height: 15px;
+            background: var(--bg-color);
+            border: 2px solid var(--accent-teal);
             border-radius: 50%;
-            filter: blur(60px);
-            z-index: 1;
-            opacity: 0.5;
-            animation:
-                pulseOrb 8s alternate infinite ease-in-out,
-                fadeOut 0.8s ease forwards 2.2s; /* Fade out orbs before redirect */
+            box-shadow: 0 0 10px var(--accent-teal);
+            z-index: 2;
         }
 
-        .orb-1 { width: 300px; height: 300px; background: rgba(79, 209, 197, 0.1); top: -100px; left: -100px; animation-delay: 0s, 2.2s; }
-        .orb-2 { width: 400px; height: 400px; background: rgba(183, 148, 244, 0.1); bottom: -150px; right: 10%; animation-delay: 2s, 2.2s; }
-        .orb-3 { width: 200px; height: 200px; background: rgba(246, 173, 85, 0.1); top: 50%; left: 50%; transform: translate(-50%, -50%); animation-delay: 4s, 2.2s; }
-
-        @keyframes pulseOrb {
-            0% { transform: scale(0.8) translate(0, 0); opacity: 0.2; }
-            100% { transform: scale(1.2) translate(20px, -20px); opacity: 0.4; }
-        }
-
-        /* Responsive */
-        @media (max-width: 600px) {
-            .welcome-text { font-size: 3.5rem; }
-            .name-text { font-size: 1.2rem; letter-spacing: 4px; }
-            @keyframes revealName {
-                0% { opacity: 0; transform: translateY(15px); letter-spacing: 2px;}
-                100% { opacity: 1; transform: translateY(0); letter-spacing: 4px;}
-            }
-        }
-
-        .fallback-link {
-            position: absolute;
-            bottom: 2rem;
-            color: rgba(255,255,255,0.4);
-            text-decoration: none;
-            font-size: 0.85rem;
+        .timeline-date {
+            font-size: 0.9rem;
+            font-weight: 600;
+            letter-spacing: 1px;
             text-transform: uppercase;
-            letter-spacing: 2px;
-            opacity: 0;
-            z-index: 20;
-            animation: fadeIn 1s ease 2.8s forwards; /* Appears after redirect fails */
-            transition: color 0.4s ease;
+            margin-bottom: 0.5rem;
+            display: block;
         }
 
-        .fallback-link:hover {
-            color: var(--accent-teal);
-            text-shadow: 0 0 8px var(--accent-teal);
+        .timeline-title {
+            font-size: 1.4rem;
+            color: var(--text-primary);
+            margin-bottom: 0.2rem;
+        }
+        
+        .timeline-subtitle {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            font-family: var(--font-body);
+            font-weight: 400;
+            margin-bottom: 1rem;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero-title { font-size: 3rem; }
         }
     </style>
 </head>
 <body>
-    <!-- Environmental lighting -->
+    <!-- Ambient Lighting -->
     <div class="orb orb-1"></div>
     <div class="orb orb-2"></div>
-    <div class="orb orb-3"></div>
 
-    <div class="welcome-container">
-        <h1 class="welcome-text">Welcome</h1>
-        <div class="name-text">Rajnish Yadav</div>
-        <div class="loader-wrapper">
-            <div class="loader-line"></div>
-        </div>
-    </div>
+    <!-- Navigation Injection Point -->
+    <div id="navbar"></div>
 
-    <a href="home/" class="fallback-link">Enter Site</a>
+    <main>
+        <!-- Hero Section -->
+        <section class="hero section">
+            <div class="container hero-content reveal">
+                <h1 class="hero-title"><span class="text-gradient">Rajnish Yadav</span></h1>
+                
+                <div class="affiliation-card">
+                    <h3 class="mb-2">Indian Institute of Technology (IIT) Madras</h3>
+                    <p class="text-secondary font-weight-500 mb-2">B.S. in Data Science and Applications</p>
+                    <p class="text-muted" style="font-size: 0.9rem;">Email: 25f2004238@ds.study.iim.ac.in</p>
+                </div>
+
+                <p style="font-size: 1.2rem; color: var(--text-secondary); max-width: 700px; margin: 0 auto; line-height: 1.8;">
+                    Aspiring to pursue MS/PhD through GATE DA and contribute to research-oriented work in 
+                    <span class="text-teal font-weight-600">Data Science</span> and <span class="text-purple font-weight-600">Artificial Intelligence</span>.
+                </p>
+
+                <div class="tags-container">
+                    <span class="tag teal">Machine Learning</span>
+                    <span class="tag purple">Mathematical Foundations</span>
+                    <span class="tag gold">Algorithmic Thinking</span>
+                </div>
+                
+                <div style="margin-top: 2rem; display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+                    <a href="#about" class="btn btn-primary">Read More</a>
+                    <a href="#timeline" class="btn btn-outline">Academic Timeline</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- About & Philosophy Section -->
+        <section id="about" class="section glass-panel" style="margin: 0 2rem; border-radius: var(--radius-xl);">
+            <div class="container reveal">
+                <h2 class="section-title">About Me</h2>
+                <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+                    <p class="mb-3" style="font-size: 1.1rem; color: var(--text-secondary);">
+                        I am a student at the Indian Institute of Technology (IIT) Madras with a strong focus on building a robust mathematical foundation for AI research.
+                    </p>
+                    <p class="mb-3" style="font-size: 1.1rem; color: var(--text-secondary);">
+                        I view computer science not just as programming, but as applied computational thinking anchored in <span class="text-gold">linear algebra and probability</span>.
+                    </p>
+                    <p style="font-size: 1.1rem; color: var(--text-secondary);">
+                        My career objective is to pursue an MS/PhD through <span class="text-gold">GATE DA</span>. My current progression reflects an honest, self-directed acquisition of core technical and mathematical skills alongside my rigorous BS program.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills & Competencies -->
+        <section class="section">
+            <div class="container reveal">
+                <h2 class="section-title">Core Competencies</h2>
+                <div class="grid-2">
+                    <div class="summary-card glass-panel text-center">
+                        <h3 class="mb-2 text-primary">Programming & Computer Science</h3>
+                        <p class="text-teal mb-2" style="font-size: 1.25rem; font-weight: 600;">Python</p>
+                        <p class="text-muted mb-3">Intermediate • Core Scripting • Data Structures</p>
+                        
+                        <p class="text-teal mb-2" style="font-size: 1.25rem; font-weight: 600;">System Tools</p>
+                        <p class="text-muted">Git & GitHub • VS Code Environment</p>
+                    </div>
+
+                    <div class="summary-card glass-panel text-center">
+                        <h3 class="mb-2 text-primary">Mathematics for AI</h3>
+                        <p class="text-purple mb-2" style="font-size: 1.25rem; font-weight: 600;">Probability & Statistics</p>
+                        <p class="text-muted mb-3">Intermediate • Statistical Modeling</p>
+                        
+                        <p class="text-gold mb-2" style="font-size: 1.25rem; font-weight: 600;">Linear Algebra</p>
+                        <p class="text-muted">Intermediate • Mathematical Foundations</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Curriculum Vitae & Timeline -->
+        <section id="timeline" class="section">
+            <div class="container reveal">
+                <h2 class="section-title">Academic Timeline</h2>
+                
+                <div class="timeline-container">
+                    <div class="timeline-item">
+                        <div class="timeline-dot" style="border-color: var(--accent-teal); box-shadow: 0 0 10px var(--accent-teal);"></div>
+                        <span class="timeline-date text-teal">Jan 2026 - Present</span>
+                        <h3 class="timeline-title">Independent Learner</h3>
+                        <h4 class="timeline-subtitle">Data Science, Machine Learning, and Mathematics</h4>
+                        <p class="text-muted">Focused on building strong foundations in structural thinking, algorithmic problem solving, linear algebra, probability, and statistical modeling. Preparing for the GATE DA examination to pursue a master's or PhD degree from a premier institute.</p>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-dot" style="border-color: var(--accent-purple); box-shadow: 0 0 10px var(--accent-purple);"></div>
+                        <span class="timeline-date text-purple">May 2025 - Present</span>
+                        <h3 class="timeline-title">Student, B.S. in Data Science and Applications</h3>
+                        <h4 class="timeline-subtitle">Indian Institute of Technology (IIT) Madras</h4>
+                        <p class="text-muted">Currently enrolled in the Diploma Level emphasizing mathematical and programming concepts for advanced applications in technology.</p>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-dot" style="border-color: var(--accent-gold); box-shadow: 0 0 10px var(--accent-gold);"></div>
+                        <span class="timeline-date text-gold">May 2025 - Dec 2025</span>
+                        <h3 class="timeline-title">Foundation Level Completed</h3>
+                        <h4 class="timeline-subtitle">Indian Institute of Technology (IIT) Madras</h4>
+                        <p class="text-muted">Successfully completed courses focusing on fundamental programming, data concepts, mathematics, and statistics.</p>
+                    </div>
+                </div>
+                
+                <div class="text-center mt-5" style="margin-top: 3rem;">
+                    <a href="pages/cv/Rajnish_Yadav_CV.pdf" target="_blank" class="btn btn-outline" style="margin-right: 1rem;">View Resume (PDF)</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Connect Section -->
+        <section id="connect" class="section glass-panel" style="margin: 0 2rem; border-radius: var(--radius-xl);">
+            <div class="container reveal text-center">
+                <h2 class="section-title">Get In Touch</h2>
+                <p class="mb-4 text-secondary" style="font-size: 1.1rem; max-width: 600px; margin: 0 auto 2rem auto;">
+                    I am open to academic discussions, research opportunities, and intellectual collaboration.
+                </p>
+                <div style="display: flex; flex-direction: column; gap: 1rem; align-items: center;">
+                    <a href="mailto:yrajnishds@gmail.com" class="btn btn-primary" style="min-width: 250px;">Email: yrajnishds@gmail</a>
+                    <a href="https://discourse.onlinedegree.iitm.ac.in/u/yrajnish0715/" target="_blank" class="btn btn-outline" style="min-width: 250px;">IITM Discourse Profile</a>
+                    <a href="https://github.com/yrajnishds" target="_blank" class="btn btn-outline" style="min-width: 250px;">GitHub Profile</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Injection Point -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Scripts -->
+    <script>
+        // Set the root path for relative linking inside util.js
+        window.PORTFOLIO_ROOT = './';
+    </script>
+    <script src="assets/global/utils.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Load components dynamically
+            window.loadComponent('navbar', 'components/navbar/navbar.html');
+            window.loadComponent('footer-placeholder', 'components/footer/footer.html');
+        });
+    </script>
 </body>
 </html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects | Rajnish Yadav</title>
+    
+    <link rel="stylesheet" href="../../assets/global/variables.css">
+    <link rel="stylesheet" href="../../assets/global/base.css">
+    <link rel="stylesheet" href="../../components/navbar/navbar.css">
+    <link rel="stylesheet" href="../../components/footer/footer.css">
+    
+    <style>
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .project-card {
+            display: flex;
+            flex-direction: column;
+            padding: 2.5rem;
+            height: 100%;
+        }
+
+        .project-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .folder-icon {
+            color: var(--accent-teal);
+        }
+
+        .github-link {
+            color: var(--text-muted);
+            transition: color var(--transition-fast);
+        }
+
+        .github-link:hover {
+            color: var(--text-primary);
+        }
+
+        .project-title {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .project-desc {
+            color: var(--text-secondary);
+            font-size: 1rem;
+            margin-bottom: 2rem;
+            flex-grow: 1;
+        }
+
+        .project-tech {
+            font-family: monospace;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="orb orb-1"></div>
+    <div id="navbar"></div>
+
+    <main>
+        <section class="section">
+            <div class="container reveal">
+                <h1 class="section-title">Academic & Technical Projects</h1>
+                <p class="text-center text-secondary mb-5" style="max-width: 600px; margin: 0 auto 4rem auto;">
+                    A collection of my coursework, technical implementations, and structural explorations.
+                </p>
+
+                <div class="projects-grid">
+                    <!-- Python Foundations -->
+                    <div class="summary-card glass-panel project-card">
+                        <div class="project-meta">
+                            <span class="folder-icon">
+                                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+                            </span>
+                            <a href="https://github.com/yrajnishds/python-foundations" target="_blank" class="github-link">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                            </a>
+                        </div>
+                        <h3 class="project-title text-gradient">Python Foundations Repository</h3>
+                        <div class="project-desc">
+                            <p>Structured repository documenting Python fundamentals for Data Science preparation. Implemented programming constructs including conditionals, loops, functions, and core data structures. Organized code into modular folders.</p>
+                        </div>
+                        <div class="project-tech">
+                            <span>Python Scripting</span>
+                            <span>Algorithms</span>
+                            <span>Data Structures</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script>window.PORTFOLIO_ROOT = '../../';</script>
+    <script src="../../assets/global/utils.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            window.loadComponent('navbar', '../../components/navbar/navbar.html');
+            window.loadComponent('footer-placeholder', '../../components/footer/footer.html');
+        });
+    </script>
+</body>
+</html>

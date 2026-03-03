@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connect | Rajnish Yadav</title>
+    
+    <link rel="stylesheet" href="../../assets/global/variables.css">
+    <link rel="stylesheet" href="../../assets/global/base.css">
+    <link rel="stylesheet" href="../../components/navbar/navbar.css">
+    <link rel="stylesheet" href="../../components/footer/footer.css">
+    
+    <style>
+        .connect-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .social-card {
+            display: flex;
+            align-items: center;
+            padding: 2rem;
+            gap: 1.5rem;
+            text-decoration: none;
+            transition: all var(--transition-normal);
+            border-radius: var(--radius-lg);
+        }
+
+        .social-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.05);
+            border-color: var(--brand-color, var(--accent-teal));
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .social-icon {
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255,255,255,0.05);
+            border-radius: 50%;
+            color: var(--text-primary);
+            transition: all var(--transition-fast);
+        }
+
+        .social-card:hover .social-icon {
+            background: var(--brand-color, var(--accent-teal));
+            color: #fff;
+            transform: scale(1.1);
+            box-shadow: 0 0 15px var(--brand-color, var(--accent-teal));
+        }
+
+        .social-info {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .social-name {
+            font-size: 1.25rem;
+            color: var(--text-primary);
+            font-weight: 600;
+            margin-bottom: 0.2rem;
+        }
+
+        .social-desc {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+    </style>
+</head>
+<body>
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div id="navbar"></div>
+
+    <main>
+        <section class="section">
+            <div class="container reveal">
+                <h1 class="section-title">Get In Touch</h1>
+                <p class="text-center text-secondary mb-5" style="max-width: 600px; margin: 0 auto;">
+                    I am open to academic discussions, research opportunities, and intellectual collaboration. Connect with me on any of the platforms below.
+                </p>
+
+                <div class="connect-grid">
+                    <!-- 1. Email Primary -->
+                    <a href="mailto:yrajnishds@gmail.com" class="glass-panel social-card" style="--brand-color: #EA4335;">
+                        <div class="social-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                        </div>
+                        <div class="social-info">
+                            <span class="social-name">Primary Email</span>
+                            <span class="social-desc">yrajnishds@gmail.com</span>
+                        </div>
+                    </a>
+
+                    <!-- 2. Email Student -->
+                    <a href="mailto:25f2004238@ds.study.iitm.ac.in" class="glass-panel social-card" style="--brand-color: #b794f4;">
+                        <div class="social-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                        </div>
+                        <div class="social-info">
+                            <span class="social-name">Student Email</span>
+                            <span class="social-desc">25f2004238@ds.study.iitm.ac.in</span>
+                        </div>
+                    </a>
+
+                    <!-- 3. LinkedIn -->
+                    <a href="https://linkedin.com/in/yrajnishds" target="_blank" class="glass-panel social-card" style="--brand-color: #0077B5;">
+                        <div class="social-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                        </div>
+                        <div class="social-info">
+                            <span class="social-name">LinkedIn</span>
+                            <span class="social-desc">Professional Network</span>
+                        </div>
+                    </a>
+
+                    <!-- 4. GitHub -->
+                    <a href="https://github.com/yrajnishds" target="_blank" class="glass-panel social-card" style="--brand-color: #333333;">
+                        <div class="social-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                        </div>
+                        <div class="social-info">
+                            <span class="social-name">GitHub</span>
+                            <span class="social-desc">Code & Projects</span>
+                        </div>
+                    </a>
+
+                    <!-- 5. LeetCode -->
+                    <a href="https://leetcode.com/yrajnishds" target="_blank" class="glass-panel social-card" style="--brand-color: #FFA116;">
+                        <div class="social-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+                        </div>
+                        <div class="social-info">
+                            <span class="social-name">LeetCode</span>
+                            <span class="social-desc">Algorithmic Practice</span>
+                        </div>
+                    </a>
+
+                    <!-- 6. Kaggle -->
+                    <a href="https://kaggle.com/yrajnishds" target="_blank" class="glass-panel social-card" style="--brand-color: #20BEFF;">
+                        <div class="social-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+                        </div>
+                        <div class="social-info">
+                            <span class="social-name">Kaggle</span>
+                            <span class="social-desc">Data Science Community</span>
+                        </div>
+                    </a>
+
+                    <!-- 7. YouTube -->
+                    <a href="https://www.youtube.com/@the_ds_lab" target="_blank" class="glass-panel social-card" style="--brand-color: #FF0000;">
+                        <div class="social-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/></svg>
+                        </div>
+                        <div class="social-info">
+                            <span class="social-name">YouTube</span>
+                            <span class="social-desc">The DS Lab</span>
+                        </div>
+                    </a>
+
+                    <!-- 8. IITM Discourse -->
+                    <a href="https://discourse.onlinedegree.iitm.ac.in/u/yrajnish0715/" target="_blank" class="glass-panel social-card" style="--brand-color: #f6ad55;">
+                        <div class="social-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+                        </div>
+                        <div class="social-info">
+                            <span class="social-name">IITM Discourse</span>
+                            <span class="social-desc">Academic Forum</span>
+                        </div>
+                    </a>
+
+                    <!-- 9. Reddit -->
+                    <a href="https://reddit.com/u/yrajnishds" target="_blank" class="glass-panel social-card" style="--brand-color: #FF4500;">
+                        <div class="social-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+                        </div>
+                        <div class="social-info">
+                            <span class="social-name">Reddit</span>
+                            <span class="social-desc">Community Discussions</span>
+                        </div>
+                    </a>
+
+                    <!-- 10. Discord -->
+                    <a href="https://discord.com/users/yrajnishds" target="_blank" class="glass-panel social-card" style="--brand-color: #5865F2;">
+                        <div class="social-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+                        </div>
+                        <div class="social-info">
+                            <span class="social-name">Discord</span>
+                            <span class="social-desc">Direct Chat</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script>window.PORTFOLIO_ROOT = '../../';</script>
+    <script src="../../assets/global/utils.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            window.loadComponent('navbar', '../../components/navbar/navbar.html');
+            window.loadComponent('footer-placeholder', '../../components/footer/footer.html');
+        });
+    </script>
+</body>
+</html>

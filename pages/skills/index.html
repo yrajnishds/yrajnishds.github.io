@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skills | Rajnish Yadav</title>
+    
+    <link rel="stylesheet" href="../../assets/global/variables.css">
+    <link rel="stylesheet" href="../../assets/global/base.css">
+    <link rel="stylesheet" href="../../components/navbar/navbar.css">
+    <link rel="stylesheet" href="../../components/footer/footer.css">
+    <link rel="stylesheet" href="skills.css">
+</head>
+<body>
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div id="navbar"></div>
+
+    <main>
+        <section class="section">
+            <div class="container reveal">
+                <h1 class="section-title">Technical Skills</h1>
+                <p class="text-center text-secondary mb-5" style="max-width: 600px; margin: 0 auto;">
+                    A comprehensive overview of my technical proficiencies, programming languages, and tools.
+                </p>
+
+                <div class="skills-grid">
+                    <!-- Programming Languages -->
+                    <div class="skill-category glass-panel">
+                        <h2 class="category-title text-teal">Programming & Scripting</h2>
+                        <div class="skill-list">
+                            <div class="skill-item">
+                                <span class="skill-name">Python</span>
+                                <div class="skill-bar-container"><div class="skill-bar bg-teal" style="width: 85%;"></div></div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">HTML/CSS/JS</span>
+                                <div class="skill-bar-container"><div class="skill-bar bg-teal" style="width: 75%;"></div></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Data Science & ML -->
+                    <div class="skill-category glass-panel">
+                        <h2 class="category-title text-purple">Data Science & ML</h2>
+                        <div class="skill-list">
+                            <div class="skill-item">
+                                <span class="skill-name">Matplotlib</span>
+                                <div class="skill-bar-container"><div class="skill-bar bg-purple" style="width: 80%;"></div></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Databases & Systems -->
+                    <div class="skill-category glass-panel">
+                        <h2 class="category-title text-gold">Databases & Systems</h2>
+                        <div class="skill-list">
+                            <div class="skill-item">
+                                <span class="skill-name">Linux</span>
+                                <div class="skill-bar-container"><div class="skill-bar bg-gold" style="width: 80%;"></div></div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">SQL (SQLite3, pgSQL)</span>
+                                <div class="skill-bar-container"><div class="skill-bar bg-gold" style="width: 75%;"></div></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tools & Frameworks -->
+                    <div class="skill-category glass-panel">
+                        <h2 class="category-title text-blue">Tools & Frameworks</h2>
+                        <div class="skill-list">
+                            <div class="skill-item">
+                                <span class="skill-name">Git & GitHub</span>
+                                <div class="skill-bar-container"><div class="skill-bar bg-blue" style="width: 85%;"></div></div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">VS Code / Cursor</span>
+                                <div class="skill-bar-container"><div class="skill-bar bg-blue" style="width: 90%;"></div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script>window.PORTFOLIO_ROOT = '../../';</script>
+    <script src="../../assets/global/utils.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            window.loadComponent('navbar', '../../components/navbar/navbar.html');
+            window.loadComponent('footer-placeholder', '../../components/footer/footer.html');
+        });
+    </script>
+</body>
+</html>

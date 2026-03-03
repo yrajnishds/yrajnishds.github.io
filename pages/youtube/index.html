@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The DS Lab | Rajnish Yadav</title>
+    
+    <link rel="stylesheet" href="../../assets/global/variables.css">
+    <link rel="stylesheet" href="../../assets/global/base.css">
+    <link rel="stylesheet" href="../../components/navbar/navbar.css">
+    <link rel="stylesheet" href="../../components/footer/footer.css">
+</head>
+<body>
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div id="navbar"></div>
+
+    <main>
+        <section class="section">
+            <div class="container reveal text-center">
+                <div style="font-size: 4rem; margin-bottom: 2rem; color: #ff0000;">
+                    <svg width="80" height="80" viewBox="0 0 24 24" fill="currentColor"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/></svg>
+                </div>
+                <h1 class="section-title" style="font-size: 3rem; margin-bottom: 2rem;">The DS Lab</h1>
+                
+                <div class="glass-panel" style="padding: 3rem; max-width: 800px; margin: 0 auto 3rem auto; text-align: left;">
+                    <p class="mb-3" style="font-size: 1.1rem; color: var(--text-secondary);">
+                        <strong class="text-gradient">The DS Lab</strong> is an academic-focused learning channel dedicated to Data Science, Artificial Intelligence, and Machine Learning. Created for students who want to learn in a structured, concept-first manner without shortcuts or hype.
+                    </p>
+                    <p class="mb-3" style="font-size: 1.1rem; color: var(--text-secondary);">
+                        Intended for learners enrolled in formal AI programs, including those offered by IITs. It is also relevant for students aiming for GATE DA, higher studies, research, and academically oriented internships.
+                    </p>
+                    <p style="font-size: 1.1rem; color: var(--text-secondary);">
+                        The channel focuses on building strong foundations in <span class="text-primary font-weight-500">Python, mathematics, statistics, and machine learning</span>. Run by a student pursuing formal academic training in Data Science as a mentor-style learning space.
+                    </p>
+                </div>
+
+                <div style="display: flex; justify-content: center; gap: 1rem; margin-bottom: 4rem;">
+                    <a href="https://www.youtube.com/@the_ds_lab" target="_blank" class="btn btn-primary" style="background: linear-gradient(135deg, rgba(255, 0, 0, 0.2), rgba(200, 0, 0, 0.2)); border-color: rgba(255,0,0,0.3);">Visit Channel</a>
+                </div>
+
+                <div style="padding: 4rem; border: 1px dashed var(--surface-border); border-radius: var(--radius-lg); background: rgba(15, 23, 42, 0.2); max-width: 800px; margin: 0 auto;">
+                    <h3 class="text-gradient">Content Coming Soon</h3>
+                    <p class="text-muted mt-3">Future video lectures, tutorials, and curriculum breakdowns will be featured here directly from YouTube.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script>window.PORTFOLIO_ROOT = '../../';</script>
+    <script src="../../assets/global/utils.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            window.loadComponent('navbar', '../../components/navbar/navbar.html');
+            window.loadComponent('footer-placeholder', '../../components/footer/footer.html');
+        });
+    </script>
+</body>
+</html>

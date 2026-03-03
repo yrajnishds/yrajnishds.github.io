@@ -1,0 +1,21 @@
+{
+    "name": "Rajnish Yadav Portfolio",
+    "short_name": "RY. Portfolio",
+    "start_url": "/index.html",
+    "display": "standalone",
+    "background_color": "#06090e",
+    "theme_color": "#4fd1c5",
+    "description": "Academic Portfolio of Rajnish Yadav - Research-driven AI Student at IIT Madras",
+    "icons": [
+        {
+            "src": "/assets/images/favicon.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "/assets/images/favicon.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ]
+}

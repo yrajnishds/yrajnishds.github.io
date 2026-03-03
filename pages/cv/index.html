@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curriculum Vitae | Rajnish Yadav</title>
+    
+    <link rel="stylesheet" href="../../assets/global/variables.css">
+    <link rel="stylesheet" href="../../assets/global/base.css">
+    <link rel="stylesheet" href="../../components/navbar/navbar.css">
+    <link rel="stylesheet" href="../../components/footer/footer.css">
+    <link rel="stylesheet" href="cv.css">
+</head>
+<body>
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div id="navbar"></div>
+
+    <main>
+        <section class="section">
+            <div class="container reveal">
+                <h1 class="section-title">Curriculum Vitae</h1>
+                <div class="text-center mb-5" style="margin-bottom: 4rem;">
+                    <a href="Rajnish_Yadav_CV.pdf" target="_blank" class="btn btn-primary" style="margin-right: 1rem;">View CV</a>
+                    <a href="Rajnish_Yadav_CV.pdf" download class="btn btn-outline">Download CV</a>
+                </div>
+
+                <div class="cv-grid">
+                    <!-- Left Side: Timeline -->
+                    <div class="cv-timeline-section">
+                        <h2 class="mb-4 text-purple" style="font-size: 1.8rem;">Academic Timeline</h2>
+                        <div class="timeline-container">
+                            <div class="timeline-item">
+                                <div class="timeline-dot" style="border-color: var(--accent-teal); box-shadow: 0 0 10px var(--accent-teal);"></div>
+                                <span class="timeline-date text-teal">Jan 2026 - Present</span>
+                                <h3 class="timeline-title">Independent Learner</h3>
+                                <h4 class="timeline-subtitle">Data Science, Machine Learning, and Mathematics</h4>
+                                <p class="text-muted">Focused on building strong foundations in structural thinking, algorithmic problem solving, linear algebra, probability, and statistical modeling. Preparing for the GATE DA examination.</p>
+                            </div>
+
+                            <div class="timeline-item">
+                                <div class="timeline-dot" style="border-color: var(--accent-purple); box-shadow: 0 0 10px var(--accent-purple);"></div>
+                                <span class="timeline-date text-purple">May 2025 - Present</span>
+                                <h3 class="timeline-title">B.S. in Data Science and Applications</h3>
+                                <h4 class="timeline-subtitle">Indian Institute of Technology (IIT) Madras</h4>
+                                <p class="text-muted">Currently enrolled in the Diploma Level emphasizing mathematical and programming concepts for advanced applications.</p>
+                            </div>
+
+                            <div class="timeline-item">
+                                <div class="timeline-dot" style="border-color: var(--accent-gold); box-shadow: 0 0 10px var(--accent-gold);"></div>
+                                <span class="timeline-date text-gold">May 2025 - Dec 2025</span>
+                                <h3 class="timeline-title">Foundation Level Completed</h3>
+                                <h4 class="timeline-subtitle">Indian Institute of Technology (IIT) Madras</h4>
+                                <p class="text-muted">Successfully completed courses focusing on fundamental programming, data concepts, mathematics, and statistics.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Side: Projects Overview -->
+                    <div class="cv-projects-section">
+                        <h2 class="mb-4 text-teal" style="font-size: 1.8rem;">Projects Overview</h2>
+                        <div class="project-summary-card glass-panel mb-4">
+                            <h3 class="text-primary mb-2">Portfolio Website Optimization</h3>
+                            <p class="text-secondary mb-3">A personalized academic portfolio built using HTML, CSS, and modular JS, featuring interactive UI states and dynamic component loading.</p>
+                            <span class="tag teal">Web Dev</span>
+                            <span class="tag purple">UI/UX</span>
+                        </div>
+                        <div class="project-summary-card glass-panel mb-4">
+                            <h3 class="text-primary mb-2">Machine Learning Models</h3>
+                            <p class="text-secondary mb-3">Experimenting with predictive algorithms and statistical modeling techniques learned through IITM coursework.</p>
+                            <span class="tag gold">Python</span>
+                            <span class="tag teal">Scikit-Learn</span>
+                        </div>
+                        <div class="project-summary-card glass-panel">
+                            <h3 class="text-primary mb-2">Data Structures & Algorithms</h3>
+                            <p class="text-secondary mb-3">Implementing core computer science concepts such as trees, graphs, and dynamic programming algorithms.</p>
+                            <span class="tag purple">Algorithms</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bottom Links -->
+                <div class="text-center mt-5" style="margin-top: 5rem; display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap;">
+                    <a href="../projects/" class="btn btn-primary" style="min-width: 200px;">View All Projects</a>
+                    <a href="../connect/" class="btn btn-outline" style="min-width: 200px;">Connect</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script>window.PORTFOLIO_ROOT = '../../';</script>
+    <script src="../../assets/global/utils.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            window.loadComponent('navbar', '../../components/navbar/navbar.html');
+            window.loadComponent('footer-placeholder', '../../components/footer/footer.html');
+        });
+    </script>
+</body>
+</html>
