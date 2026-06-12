@@ -12,52 +12,7 @@
     }
 }
 
-/* Timeline Styles */
-.timeline-container {
-    position: relative;
-    padding-left: 2rem;
-    border-left: 2px solid;
-    border-image: linear-gradient(to bottom, var(--accent-teal), var(--accent-purple), transparent) 1;
-}
 
-.timeline-item {
-    position: relative;
-    margin-bottom: 3rem;
-}
-
-.timeline-dot {
-    position: absolute;
-    top: 5px; 
-    left: -2.35rem; /* align correctly over border */
-    width: 15px; height: 15px;
-    background: var(--bg-color);
-    border: 2px solid;
-    border-radius: 50%;
-    z-index: 2;
-}
-
-.timeline-date {
-    font-size: 0.9rem;
-    font-weight: 600;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    margin-bottom: 0.5rem;
-    display: block;
-}
-
-.timeline-title {
-    font-size: 1.3rem;
-    color: var(--text-primary);
-    margin-bottom: 0.2rem;
-}
-
-.timeline-subtitle {
-    font-size: 1.05rem;
-    color: var(--text-secondary);
-    font-family: var(--font-body);
-    font-weight: 400;
-    margin-bottom: 1rem;
-}
 
 /* Projects Styles */
 .project-summary-card {
@@ -77,8 +32,8 @@
     padding: 0.3rem 1rem;
     border-radius: 50px;
     font-size: 0.8rem;
-    font-weight: 500;
-    background: rgba(255,255,255,0.03);
+    font-weight: 600;
+    background: var(--surface-hover);
     border: 1px solid var(--surface-border);
     letter-spacing: 0.5px;
     margin-right: 0.5rem;
@@ -88,3 +43,35 @@
 .tag.teal { color: var(--accent-teal); border-color: rgba(79, 209, 197, 0.3); }
 .tag.purple { color: var(--accent-purple); border-color: rgba(183, 148, 244, 0.3); }
 .tag.gold { color: var(--accent-gold); border-color: rgba(246, 173, 85, 0.3); }
+
+/* Certification Button Hover Effects */
+.cert-btn {
+    font-size: 0.85rem;
+    padding: 0.5rem 1.5rem;
+    background: rgba(0,0,0,0.4) !important;
+    backdrop-filter: blur(5px);
+    transition: all var(--transition-normal);
+}
+
+.cert-btn.aws:hover {
+    background: var(--accent-teal) !important;
+    color: #000 !important;
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 0 20px rgba(79, 209, 197, 0.6);
+    border-color: var(--accent-teal);
+}
+
+.cert-btn.fcc:hover {
+    background: var(--accent-purple) !important;
+    color: #fff !important;
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 0 20px rgba(183, 148, 244, 0.6);
+    border-color: var(--accent-purple);
+}
+
+@media (max-width: 480px) {
+    .cv-grid { gap: 2rem; }
+    .project-summary-card { padding: 1.25rem; }
+    .timeline-container { padding-left: 1.5rem; }
+    .timeline-dot { left: calc(-1.5rem - 6px); }
+}

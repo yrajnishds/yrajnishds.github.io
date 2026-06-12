@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /components/
 
 Sitemap: https://yrajnishds.github.io/sitemap.xml

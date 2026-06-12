@@ -1,0 +1,16 @@
+# Rajnish Yadav - Portfolio
+
+> Personal portfolio of Rajnish Yadav, BS Data Science student at IIT Madras, aspiring researcher in Data Science and Artificial Intelligence.
+
+## Navigation
+- [Home](https://yrajnishds.github.io/home/) - About me, core competencies, academic journey
+- [Projects](https://yrajnishds.github.io/projects/) - Technical implementations and repositories (e.g. Python Foundations)
+- [Research](https://yrajnishds.github.io/research/) - Academic papers and mathematical explorations
+- [CV](https://yrajnishds.github.io/cv/) - Timeline of education, certifications (AWS, freeCodeCamp), and skills
+- [Connect](https://yrajnishds.github.io/connect/) - Contact info, email, LinkedIn, and GitHub links
+
+## Core Technologies
+Python, Machine Learning, Data Science, Algorithms, Mathematical Foundations.
+
+## Summary
+Rajnish Yadav is building intelligence on mathematical foundations. Currently open to data science internships, research collaborations, and academic discussions.

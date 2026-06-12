@@ -1,4 +1,6 @@
-// Function attached to window for global access
+// Add transition overlay to body immediately
+document.body.insertAdjacentHTML('afterbegin', '<div class="page-transition-overlay"></div>');
+
 window.loadComponent = async function(elementId, componentPath) {
     try {
         const response = await fetch(componentPath);
@@ -16,6 +18,7 @@ window.loadComponent = async function(elementId, componentPath) {
 
                 // Bind generic navigation any time components mount 
                 initNavigation();
+                initThemeToggle();
             }
         }
     } catch (error) {
@@ -30,7 +33,6 @@ function initNavigation() {
         'projects': root + 'projects/',
         'research': root + 'research/',
         'blog': root + 'blog/',
-        'youtube': root + 'youtube/',
         'connect': root + 'connect/',
         'skills': root + 'skills/',
         'cv': root + 'cv/'
@@ -56,6 +58,17 @@ function initNavigation() {
         if (currentPath.includes(`/${target}/`) || currentPath.endsWith(`/${target}`)) {
             link.classList.add('active');
         }
+
+        // Page Transition Click Intercept
+        link.addEventListener('click', (e) => {
+            if (target && linkMap[target] && !link.classList.contains('active')) {
+                e.preventDefault();
+                document.body.classList.add('fade-out');
+                setTimeout(() => {
+                    window.location.href = linkMap[target];
+                }, 400); // Wait for transition
+            }
+        });
     });
 
     // Update footer links dynamically 
@@ -65,6 +78,17 @@ function initNavigation() {
         if(target && linkMap[target]) {
             link.setAttribute('href', linkMap[target]);
         }
+
+        // Page Transition Click Intercept
+        link.addEventListener('click', (e) => {
+            if (target && linkMap[target]) {
+                e.preventDefault();
+                document.body.classList.add('fade-out');
+                setTimeout(() => {
+                    window.location.href = linkMap[target];
+                }, 400);
+            }
+        });
     });
 
     // Mobile menu toggle
@@ -79,14 +103,73 @@ function initNavigation() {
 
     // Navbar scroll effect
     const navElement = document.querySelector('.navbar');
-    window.addEventListener('scroll', () => {
-        if(window.scrollY > 50) {
-            navElement.classList.add('scrolled');
+    if (navElement) {
+        window.addEventListener('scroll', () => {
+            if(window.scrollY > 50) {
+                navElement.classList.add('scrolled');
+            } else {
+                navElement.classList.remove('scrolled');
+            }
+        });
+    }
+}
+
+function initThemeToggle() {
+    const toggleBtn = document.getElementById('theme-toggle');
+    if (!toggleBtn) return;
+
+    // Check saved theme or system preference
+    const savedTheme = localStorage.getItem('theme');
+    
+    // Check if we already applied theme early on body to avoid flicker
+    if (!document.documentElement.hasAttribute('data-theme-loaded')) {
+        // Default to light mode unless explicitly set to dark
+        if (savedTheme === 'dark') {
+            document.documentElement.setAttribute('data-theme', 'dark');
+            document.body.setAttribute('data-theme', 'dark');
         } else {
-            navElement.classList.remove('scrolled');
+            document.documentElement.removeAttribute('data-theme');
+            document.body.removeAttribute('data-theme'); // default is light
+        }
+        document.documentElement.setAttribute('data-theme-loaded', 'true');
+    }
+
+    if (document.documentElement.getAttribute('data-theme') === 'dark' || document.body.getAttribute('data-theme') === 'dark') {
+        toggleBtn.textContent = '☀️'; // Sun icon to switch to light
+    } else {
+        toggleBtn.textContent = '🌙'; // Moon icon to switch to dark
+    }
+
+    // Remove old listeners to prevent duplicates
+    const newToggleBtn = toggleBtn.cloneNode(true);
+    toggleBtn.parentNode.replaceChild(newToggleBtn, toggleBtn);
+
+    newToggleBtn.addEventListener('click', () => {
+        if (document.documentElement.getAttribute('data-theme') === 'dark' || document.body.getAttribute('data-theme') === 'dark') {
+            // Switch to Light
+            document.documentElement.removeAttribute('data-theme');
+            document.body.removeAttribute('data-theme');
+            localStorage.setItem('theme', 'light');
+            newToggleBtn.textContent = '🌙';
+        } else {
+            // Switch to Dark
+            document.documentElement.setAttribute('data-theme', 'dark');
+            document.body.setAttribute('data-theme', 'dark');
+            localStorage.setItem('theme', 'dark');
+            newToggleBtn.textContent = '☀️';
         }
     });
 }
+
+// Early theme init to prevent flash
+(function() {
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark') {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        if (document.body) document.body.setAttribute('data-theme', 'dark');
+    }
+})();
+
 
 document.addEventListener('DOMContentLoaded', () => {
     // Reveal animations
@@ -94,18 +177,32 @@ document.addEventListener('DOMContentLoaded', () => {
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
+                entry.target.classList.add('visible');
                 observer.unobserve(entry.target);
             }
         });
     }, { threshold: 0.1 });
 
     reveals.forEach(reveal => {
-        // Init styles for reveals
-        reveal.style.opacity = '0';
-        reveal.style.transform = 'translateY(30px)';
-        reveal.style.transition = 'all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1)';
         observer.observe(reveal);
+    });
+
+    // Remove page transition overlay on load
+    window.addEventListener('load', () => {
+        setTimeout(() => {
+            document.body.classList.add('loaded');
+        }, 100);
+
+        // Simulate skeleton loading if wrappers exist
+        const skeletons = document.querySelectorAll('.skeleton-wrapper');
+        if (skeletons.length > 0) {
+            setTimeout(() => {
+                skeletons.forEach(el => {
+                    // Find elements with skeleton class inside wrapper and remove it
+                    const skels = el.querySelectorAll('.skeleton');
+                    skels.forEach(s => s.classList.remove('skeleton'));
+                });
+            }, 800); // 800ms artificial delay for visual effect
+        }
     });
 });
